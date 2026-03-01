@@ -1,53 +1,55 @@
 # Установка и настройка RustDesk
 
-### Описание
-
 Установка скрипта на сервер для работы с RustDesk и настройкой сервера для корректной работы. Настройка подключения программы RustDesk.
 
-### Содержание
+<br />
+
+## Содержание
 
 - [1. Открытие портов на сервере](#1-открытие-портов-на-сервере)
 - [2. Установка скрипта на сервере](#2-установка-скрипта-на-сервере)
-- [3. Настройка RustDesk](#2-установка-скрипта-на-сервере)
+- [3. Настройка RustDesk](#3-настройка-rustdesk)
 - [4. Дополнительно](#4-дополнительно)
 
-### 1. Открытие портов на сервере
+<br />
+
+## 1. Открытие портов на сервере
 
 Для того чтобы было корректное соединение, можем убедиться что все порты открыты и работают:
 
-```
+```bash
 sudo ufw allow http
 ```
 
-```
+```bash
 sudo ufw allow https
 ```
 
-```
+```bash
 sudo ufw default allow outgoing
 ```
 
-```
+```bash
 sudo ufw allow 8000/tcp
 ```
 
-```
+```bash
 sudo ufw allow 22/tcp
 ```
 
-```
+```bash
 sudo ufw allow ssh
 ```
 
-```
+```bash
 sudo ufw allow 21114:21119/tcp
 ```
 
-```
+```bash
 sudo ufw allow 21116/udp
 ```
 
-```
+```bash
 sudo ufw status
 ```
 
@@ -55,27 +57,29 @@ sudo ufw status
 
 <img src="./photo/server/1.png" />
 
-### 2. Установка скрипта на сервере
+<br />
+
+## 2. Установка скрипта на сервере
 
 Устанавливаем необходимые библотеки:
 
-```
+```bash
 sudo apt install wget git nano net-tools -y
 ```
 
 Далее скачиваем скрипт для установки:
 
-```
+```bash
 sudo wget https://raw.githubusercontent.com/eugeneviktorov/ServerRustDesk/main/install.sh
 ```
 
 Или если нет возможности его скачать, что-то пошло не так например, то можно с помощью Termius через SFTP просто скопировать файл на сервер: <a href="/install.sh">файл</a>
 
-```
+```bash
 sudo chmod +x install.sh
 ```
 
-```
+```bash
 sudo ./install.sh
 ```
 
@@ -96,7 +100,9 @@ sudo ./install.sh
 
 <img src="./photo/server/4.png" />
 
-### 3. Настройка RustDesk
+<br />
+
+## 3. Настройка RustDesk
 
 Программу необходимо скачать с репозитория <a href="https://github.com/rustdesk/rustdesk/releases">Github</a>
 
@@ -126,11 +132,13 @@ sudo ./install.sh
 
 Всё настроено. Данные которые были сохранены в текстовый документ нужно передать другому пользователю, и повторить процедуру в программе RustDesk, также ввести данные в ID/Ретранслятор. После чего можно пользоваться программой.
 
-### 4. Дополнительно
+<br />
+
+## 4. Дополнительно
 
 В некоторых случаях необходимо чтобы программа работала до входа в пользователя системы. Для этого необходимо создать службу из программы RustDesk на ПК. Используем команду в командной строке от имени администратора:
 
-```
+```bash
 sc create RustDesk binPath= "\"C:\Program Files\RustDesk\rustdesk.exe\" --service"
 ```
 
@@ -138,6 +146,6 @@ sc create RustDesk binPath= "\"C:\Program Files\RustDesk\rustdesk.exe\" --servic
 
 В программе «службы» найти и остановить сервис RustDesk, после чего также через командную строку с правами администратора удалить её:
 
-```
+```bash
 sc delete RustDesk Service
 ```
