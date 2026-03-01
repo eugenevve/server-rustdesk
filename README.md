@@ -2,8 +2,7 @@
 
 Инструкция по полной настройке сервера для использования программы RustDesk.
 
-- <a href="/PURCHASE-SERVERS/README.md">💰 Покупка сервера</a>
-
-- <a href="/TERMIUS/README.md">🔑 Настройка программы Termius</a>
-- <a href="/LINUX-UBUNTU-SETTINGS/README.md">🧩 Настройка Linux Ubuntu сервера</a>
-- <a href="/RUSTDESK-SETTINGS/README.md">🪟 Настройка программы RustDesk</a>
+- [💰 Покупка сервера](./PURCHASE-SERVERS/README.md)
+- [🔑 Настройка программы Termius](./TERMIUS/README.md)
+- [🧩 Настройка Linux Ubuntu сервера](./LINUX-UBUNTU-SETTINGS/README.md)
+- [🪟 Настройка программы RustDesk](./RUSTDESK-SETTINGS/README.md)
