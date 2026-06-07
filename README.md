@@ -1,6 +1,6 @@
 # ServerRustDesk
 
-> Версия: 3.0.0
+> Версия: 3.0.1
 
 <img src="./0-IMAGES/Main.png" />
 
