@@ -240,6 +240,32 @@ PasswordAuthentication no
 sudo systemctl restart ssh
 ```
 
+Проверьте подключение к созданному пользователю с паролем и по `SSH`, если по паролю всё также можно подключиться, то необходимо сделать дополнительную настройку. Для этого используем команду:
+
+```bash
+ls /etc/ssh/sshd_config.d/
+```
+
+Нам покажет список дополнительных файлов `SSH` которые создаются хостингами. Ответ может быть разным, но пример файла может быть такой: `50-cloud-init.conf`.
+
+Открываем файл командой:
+
+```bash
+sudo nano /etc/ssh/sshd_config.d/50-cloud-init.conf
+```
+
+И также заменяем строку `PasswordAuthentication yes` на:
+
+```bash
+PasswordAuthentication no
+```
+
+После чего снова сохраняем `ctrl+x`, `y`, `Enter` и перезагружаем `SSH`:
+
+```bash
+sudo systemctl restart ssh
+```
+
 <br />
 
 ## 3. Настройка даты и времени
@@ -259,7 +285,7 @@ sudo timedatectl set-timezone Europe/Moscow
 В некоторых случаях может потребоваться задать время вручную:
 
 ```bash
-sudo timedatectl set-time '2026-12-31 23:59:59'
+sudo timedatectl set-time '2025-12-31 23:59:59'
 ```
 
 После выполнения настроек система автоматически применит изменения.
