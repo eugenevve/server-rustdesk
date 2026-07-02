@@ -1,4 +1,4 @@
-# ServerRustDesk
+# Server RustDesk
 
 > Версия: 3.0.1
 
