@@ -1,6 +1,6 @@
 # Server RustDesk
 
-> Версия: 3.0.1
+> Версия: 3.0.2
 
 <img src="./0-IMAGES/Main.png" />
 
