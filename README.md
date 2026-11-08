@@ -1,6 +1,6 @@
 # Server RustDesk
 
-> Версия: 3.0.2
+> Версия: 3.0.3
 
 <img src="./0-IMAGES/Main.png" />
 
@@ -25,3 +25,9 @@
 ## 🔐 Сервис и настройка
 
 - [🪟 Настройка программы RustDesk](./7-RUSTDESK-SETTINGS/README.md)
+
+<br />
+
+## 🔢 Другое
+
+- [📁 Дополнительные файлы проекта](./8-FILES/README.md)
